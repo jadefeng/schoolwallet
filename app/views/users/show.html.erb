@@ -1,0 +1,39 @@
+
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<h2>Lots of money</h2>
+<h1> <%= @user.balance %> </h1>
+
+<% @children.each do |child| %>
+	<div class="child_box">
+		<h3><%= child.name %></h3>
+		<img src="<%= child.image_url%>">
+		<a href="/"><h1><%= School.find(:id==child.school_id).name %></h1></a>
+    <h1>Balance: <%= child.balance %></h1> 
+
+    <%= form_tag user_change_money_path(@user) do   %> 
+      <input type="float" name="amount" placeholder="Amount">
+      <input type="hidden" name="child_id" value=<%=child.id%> />
+      <%= submit_tag 'Add Money', name: 'add_money' %>
+      <%= submit_tag 'Remove Money' %>
+    <% end %> 
+
+
+	</div>
+<% end %>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

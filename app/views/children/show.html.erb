@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @child.name %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @child.image_url %>
+</p>
+
+<p>
+  <strong>School:</strong>
+  <%= @child.school_id %>
+</p>
+
+<p>
+  <strong>Balance:</strong>
+  <%= @child.balance %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @child.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_child_path(@child) %> |
+<%= link_to 'Back', children_path %>
