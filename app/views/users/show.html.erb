@@ -1,24 +1,26 @@
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
+  <h1> Welcome <%= @user.first_name %> <%= @user.last_name %></h1>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+    <div class="col-lg-12">
+        <div class="box box-solid box-primary">
+        <div class="box-header">
+          <h3 class="box-title">Your Balance:</h3>
+        </div><!-- /.box-header -->
+        <div class="box-body">
+          <%= @user.balance %>
+        </div><!-- /.box-body -->
+      </div>
+    </div>
 
-<h2>Lots of money</h2>
-<h1> <%= @user.balance %> </h1>
+
+
+<br> 
 
 <% @children.each do |child| %>
-	<div class="child_box">
+	<div class="child_box col-md-4">
+    <div class="box box-solid box-primary">
+
 		<h3><%= child.name %></h3>
 		<img src="<%= child.image_url%>">
 		<a href="/"><h1><%= School.find(:id==child.school_id).name %></h1></a>
@@ -30,8 +32,7 @@
       <%= submit_tag 'Add Money', name: 'add_money' %>
       <%= submit_tag 'Remove Money' %>
     <% end %> 
-
-
+    </div>
 	</div>
 <% end %>
 

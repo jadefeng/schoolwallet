@@ -11,10 +11,10 @@
 
 </head>
 <body>
-
+<div class="wrapper">
 
 <header class="main-header">
-  <nav class="navbar navbar-static-top">
+  <nav class="navbar navbar-static-top navbar-inverse">
     <div class="container-fluid">
     <div class="navbar-header">
       <a href="/" class="navbar-brand"><b>School</b>Wallet</a>
@@ -27,15 +27,15 @@
     <div class="collapse navbar-collapse" id="navbar-collapse">
       <ul class="nav navbar-nav">
 		<% if current_user %>
-	        <li>
+	        <li class="active">
 				<%= link_to "My Account", user_path(current_user) %>
 	        </li>
-	        <li class="active">
+	        <li>
 				<%= link_to "Log Out", logout_path %>
 	        </li>
         <% else %>
 	        <li class="active">
-				<%= link_to "Sign Up", signup_path %> or
+				<%= link_to "Sign Up", signup_path %> 
 			</li>
 			<li>
 				<%= link_to "Log In", login_path %>
@@ -58,5 +58,6 @@
 		<%= yield %>
 	</div>
 
+</div>
 </body>
 </html>

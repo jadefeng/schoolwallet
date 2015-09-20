@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150919100103) do
+ActiveRecord::Schema.define(version: 20150920001722) do
 
   create_table "children", force: :cascade do |t|
     t.string   "name"
@@ -22,6 +22,24 @@ ActiveRecord::Schema.define(version: 20150919100103) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
+
+  create_table "goods", force: :cascade do |t|
+    t.string   "name"
+    t.float    "price"
+    t.string   "image_url"
+    t.string   "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "purchases", force: :cascade do |t|
+    t.integer  "good_id"
+    t.integer  "child_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "purchases", ["good_id", "child_id"], name: "index_purchases_on_good_id_and_child_id", unique: true
 
   create_table "schools", force: :cascade do |t|
     t.string   "name"

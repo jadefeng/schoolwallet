@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require admin-lte
 //= require turbolinks
 //= require braintree 
 //= require_tree .

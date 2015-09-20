@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_secure_password
   has_many :children
+  has_many :purchases
+  has_many :goods, through :purchases
 
   validates :first_name,
             presence: true

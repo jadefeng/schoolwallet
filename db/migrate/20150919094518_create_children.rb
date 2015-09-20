@@ -6,6 +6,7 @@ class CreateChildren < ActiveRecord::Migration
       t.integer :school_id
       t.float :balance, :default => 0
       t.integer :user_id
+      t.string :student_id
 
       t.timestamps null: false
     end

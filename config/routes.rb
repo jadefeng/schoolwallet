@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :goods
   resources :transactions, only: [:new, :create]
 
   get 'payment/new'
@@ -26,6 +27,8 @@ Rails.application.routes.draw do
 
   #Pages
   get 'page/index'
-  root 'page#index'
+  # root 'page#index'
+  root :to => 'sessions#new'
+  
 
 end
